@@ -34,7 +34,7 @@ const sendEmail = async ({
 
     //  if (process.env.ENVIROMENT === "DEVELOPMENT") {
     const resendBody = {
-      from: "no-reply@testpapers.mu", //testpaper@resend.dev
+      from: "ghj",
       to: emailTo,
       subject: subject,
       html: html || "<p></p>",

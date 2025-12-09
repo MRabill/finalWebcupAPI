@@ -20,6 +20,7 @@ const mime = require("mime");
 const multer = require("multer");
 
 const readRecursively = require("./readRecursively");
+const checkIfDate = require("./checkIfDate");
 
 const uuid = require("uuid");
 
@@ -39,6 +40,7 @@ module.exports = {
   mime,
   multer,
   readRecursively,
+  checkIfDate,
   uuid,
   bcrypt,
   bodyEncryption,

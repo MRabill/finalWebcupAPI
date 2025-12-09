@@ -1,7 +1,7 @@
 const passportJWT = require("passport-jwt");
 const JwtStrategy = passportJWT.Strategy;
 const {
-  mainKnex,
+  knex,
   EMP_DB,
   EMP_TB,
   EMP_TB_EMAIL_FIELD,
@@ -10,7 +10,7 @@ const extractJwt = passportJWT.ExtractJwt;
 
 const options = {
   jwtFromRequest: extractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET,
+  secretOrKey: "sdfsdfsdf",
 };
 
 /**
@@ -25,7 +25,7 @@ const strategy = new JwtStrategy(options, async (payload, next) => {
       return;
     }
 
-    const checkUserActive = await mainKnex("user")
+    const checkUserActive = await knex("user")
       .where({ email: payload.email })
       .then((row) => {
         const userArr = row.pop();

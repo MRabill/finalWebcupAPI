@@ -1,1 +1,2 @@
-# WEBCUP.mu API
+# finalWebcupAPI
+Final Webcup competition in Maputo
