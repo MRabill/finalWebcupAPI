@@ -11,9 +11,9 @@ const cacheControl = require("./routes/cacheControl");
 
 const { readRecursively, knexDb } = require("./utils/routes.imports.utils");
 
-// const passport = require("passport");
+const passport = require("passport");
 
-// const strategy = require("./middlewares/passport");
+const strategy = require("./middlewares/passport");
 const path = require("path");
 const app = express();
 app.use(compression());
@@ -27,11 +27,8 @@ app.use(cookieParser());
 
 //helmet middleware
 app.use(helmet());
-console.log("Initializing Passport.js with JWT strategy");
 
-// passport.use(strategy);
-
-console.log("Connecting to the database using Knex.js");
+passport.use(strategy);
 
 // import cors & cache routes
 app.use(corsRouter);
@@ -57,7 +54,6 @@ try {
         try {
           // Use path.join to resolve the file path correctly across different OS
           const modulePath = path.join(__dirname, item);
-          console.log(`Importing module: ${modulePath}`);
           file = require(modulePath);
           app.use(file._router);
         } catch (err) {
