@@ -17,3 +17,5 @@ jobs:
           server: api.serveur4.webcup.hodi.cloud
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
+          local-dir: ./
+          server-dir: ./
