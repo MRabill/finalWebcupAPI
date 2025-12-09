@@ -7,6 +7,8 @@ const { authHeader } = require("../../middlewares");
 // 2. Verify the token with Supabase
 // 3. Update refresh token in the database if needed
 // 4. Populate the user object in the request
+
+console.log("Setting up /V1/auth/check-login route");
 router.post("/V1/auth/check-login", authHeader, async function (req, res) {
   try {
     // At this point, authentication was successful and req.user has been populated by the authHeader middleware
