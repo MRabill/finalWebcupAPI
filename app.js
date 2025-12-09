@@ -11,9 +11,9 @@ const cacheControl = require("./routes/cacheControl");
 
 const { readRecursively, knexDb } = require("./utils/routes.imports.utils");
 
-const passport = require("passport");
+// const passport = require("passport");
 
-const strategy = require("./middlewares/passport");
+// const strategy = require("./middlewares/passport");
 const path = require("path");
 const app = express();
 app.use(compression());
@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(helmet());
 console.log("Initializing Passport.js with JWT strategy");
 
-passport.use(strategy);
+// passport.use(strategy);
 
 console.log("Connecting to the database using Knex.js");
 
