@@ -10,7 +10,7 @@ const extractJwt = passportJWT.ExtractJwt;
 
 const options = {
   jwtFromRequest: extractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET,
+  secretOrKey: "sdfsdfsdf",
 };
 
 /**
