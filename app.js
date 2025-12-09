@@ -27,8 +27,11 @@ app.use(cookieParser());
 
 //helmet middleware
 app.use(helmet());
+console.log("Initializing Passport.js with JWT strategy");
 
 passport.use(strategy);
+
+console.log("Connecting to the database using Knex.js");
 
 // import cors & cache routes
 app.use(corsRouter);
@@ -54,6 +57,7 @@ try {
         try {
           // Use path.join to resolve the file path correctly across different OS
           const modulePath = path.join(__dirname, item);
+          console.log(`Importing module: ${modulePath}`);
           file = require(modulePath);
           app.use(file._router);
         } catch (err) {
