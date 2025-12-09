@@ -11,11 +11,10 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files
+      - name: 📂 Sync files test
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: api.serveur4.webcup.hodi.cloud
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          local-dir: ./
           server-dir: /api.serveur4.webcup.hodi.cloud/

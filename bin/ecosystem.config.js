@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: `api.serveur4.webcup.hodi.cloud:9002`,
+      name: `api.webcup:9002`,
       script: "./bin/www",
       watch: false,
       log_date_format: "MM-DD hh:mm:ss.SSS A",

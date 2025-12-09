@@ -5,7 +5,11 @@ const { router } = require("../utils/routes.imports.utils");
  */
 router.use((req, res, next) => {
   // Set allowed origins - specifically add the moderator domain
-  const allowedOrigins = ["https://serveur4.webcup.hodi.cloud"];
+  const allowedOrigins = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://localhost:5175",
+  ];
 
   const origin = req.headers.origin;
 
@@ -14,9 +18,7 @@ router.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", origin);
   }
 
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
-  // res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET,HEAD,OPTIONS,DELETE,PUT,POST,PATCH"
@@ -27,9 +29,9 @@ router.use((req, res, next) => {
   );
 
   // Handle preflight OPTIONS requests
-  // if (req.method === "OPTIONS") {
-  //   return res.status(200).end();
-  // }
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
 
   next();
 });

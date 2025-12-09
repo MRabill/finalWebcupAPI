@@ -8,6 +8,7 @@ const app = require("../app");
 const debug = require("debug")("rcap-express-skeleton:server");
 const http = require("http");
 const { Table } = require("console-table-printer");
+
 // const socketIO = require("../utils/socketIO");
 
 /**
@@ -113,4 +114,5 @@ function onListening(server) {
 /**
  * Socket.IO
  */
+
 // socketIO(server);

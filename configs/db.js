@@ -2,7 +2,7 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 const db = {
-  client: "mysql",
+  client: "pg",
   connection: {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,

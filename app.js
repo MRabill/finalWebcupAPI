@@ -34,8 +34,6 @@ passport.use(strategy);
 app.use(corsRouter);
 app.use(cacheControl);
 
-console.log("Environment:", process.env.NODE_ENV);
-
 // Set EJS as the templating engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
