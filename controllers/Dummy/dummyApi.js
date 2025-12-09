@@ -5,7 +5,7 @@ router.get("/V1/dummy", authHeader, async function (req, res) {
   try {
     return res.status(200).json({
       success: true,
-      message: "Dummy endpoint reached",
+      message: "Dummy endpoint reached 2",
       user: {
         id: req.user.id,
         email: req.user.email,
